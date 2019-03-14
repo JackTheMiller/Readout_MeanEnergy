@@ -48,7 +48,6 @@ with open(FNAME) as fp:
 mean = np.sum(Accdata)/len(Accdata)
 output += 'Mean energy: ' + str(round(mean*1E6, 2)) + ' uJ'
 output += '\n' + str(np.sum(Accdata)) +'\n'+ str(len(Accdata))
-print(output)
 #print('Mean energy: ' + str(round(mean*1E6, 2)) + ' um')
 #print()
 #file.write('Mean energy: ' + str(round(mean*1E6, 2)) + ' um')
