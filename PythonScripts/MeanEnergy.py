@@ -19,7 +19,7 @@ import os
 import numpy as np
 import datetime
 
-#Path of ouput file of power meter software
+# Path of ouput file of power meter software
 Parentpath = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..'))
 os.chdir(Parentpath)
 file = open('MeanEnergy.txt', 'a+')
@@ -27,8 +27,7 @@ file = open('MeanEnergy.txt', 'a+')
 #path = os.path.dirname(os.path.abspath(__file__))
 #os.chdir(path)
 
-#FNAME = 'DataStore.txt'
-FNAME = 'test1.txt'
+FNAME = 'DataStore.txt'
 data = []
 Accdata = np.genfromtxt(FNAME, dtype=float, skip_header = 14, skip_footer = 1)
 with open(FNAME) as fp:
@@ -47,7 +46,9 @@ with open(FNAME) as fp:
         elif i > 0:
             break
 mean = np.sum(Accdata)/len(Accdata)
-output += 'Mean energy: ' + str(round(mean*1E6, 2)) + ' um'
+output += 'Mean energy: ' + str(round(mean*1E6, 2)) + ' uJ'
+output += '\n' + str(np.sum(Accdata)) +'\n'+ str(len(Accdata))
+print(output)
 #print('Mean energy: ' + str(round(mean*1E6, 2)) + ' um')
 #print()
 #file.write('Mean energy: ' + str(round(mean*1E6, 2)) + ' um')
